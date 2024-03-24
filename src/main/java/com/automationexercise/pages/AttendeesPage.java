@@ -18,7 +18,6 @@ public class AttendeesPage {
     }
 
 
-
     private By createGroupButton = By.xpath("//button[contains(.,'Create Group')]");
     private By saveButton = By.xpath("//button[contains(.,'Save')]");
     private By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
@@ -47,7 +46,7 @@ public class AttendeesPage {
     {
         clicking(driver, createGroupButton);
         sendData(driver, groupNameText, groupName);
-        sendData(driver, emailText, "example" + getSimpleTimestamp() + "" + "@gmail.com");
+        sendData(driver, emailText, "example" + getSimpleTimestamp() + "@gmail.com");
         clicking(driver, saveButton);
 
     }
@@ -65,6 +64,7 @@ public class AttendeesPage {
     public AttendeesPage clickOnTableUsers(String groupName)
     {
 
+        reloadPage(driver);
         clicking(driver,tableUsers(groupName));
         return new AttendeesPage(driver);
     }

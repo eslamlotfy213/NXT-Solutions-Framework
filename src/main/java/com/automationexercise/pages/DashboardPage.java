@@ -2,8 +2,6 @@ package com.automationexercise.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import static com.automationexercise.Utilities.Utility.*;
 
@@ -40,9 +38,10 @@ public class DashboardPage {
     }
 
 
-    public void hoverForElement(String mainMenu_Item, String subMenu_Item){
-        hoverForElementText(driver,mainMenu_list(mainMenu_Item),subMenu_list(subMenu_Item));
-
+    public void navigationToSideBar(String mainMenu_Item, String subMenu_Item)
+    {
+        clicking(driver,mainMenu_list(mainMenu_Item));
+        clicking(driver,subMenu_list(subMenu_Item));
     }
 
 

@@ -18,26 +18,24 @@ public class EventsPage {
 
     private By newEvent_Button = By.xpath("//p[text()='New Event']");
 
-    private By StartFromScratch_Button = By.cssSelector("div > [role='button']:nth-child(1)");
+    private By startFromScratch_Button = By.cssSelector("div > [role='button']:nth-child(1)");
 
-    private By EventName_text = By.xpath("(//input[@class='Input_root__fi0ZK'])[1]");
+    private By eventName_text = By.xpath("(//input[@class='Input_root__fi0ZK'])[1]");
 
-    private By EventSlug_text = By.xpath("(//input[@class='Input_root__fi0ZK'])[2]");
+    private By eventSlug_text = By.xpath("(//input[@class='Input_root__fi0ZK'])[2]");
 
-    private By EventType_dropdownlist= By.xpath("//div[@class='flex items-center space-x-s20']//select[@class='Input_root__fi0ZK Input_selectInput__aHlvF']");
+    private By eventType_dropdownlist= By.xpath("//div[@class='flex items-center space-x-s20']//select[@class='Input_root__fi0ZK Input_selectInput__aHlvF']");
 
-    private By Timezone_dropdownlist= By.xpath("//div[@class='flex flex-col w-full pt-8 sm:pt-0']//select[@class='Input_root__fi0ZK Input_selectInput__aHlvF']");
+    private By timezone_dropdownlist= By.xpath("//div[@class='flex flex-col w-full pt-8 sm:pt-0']//select[@class='Input_root__fi0ZK Input_selectInput__aHlvF']");
 
-
-
-    private By StartDate = By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(7) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)");
+    private By start_Date = By.cssSelector("body > div:nth-child(1) > div:nth-child(1) > div:nth-child(7) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)");
 
 
-    private By End_Date = By.cssSelector("div[data-tip='true'] input[type='date']");
+    private By end_Date = By.cssSelector("div[data-tip='true'] input[type='date']");
 
-    private By Start_Time = By.xpath("(//input[@type='time'])[1]");
+    private By start_Time = By.xpath("(//input[@type='time'])[1]");
 
-    private By End_Time= By.cssSelector("div[data-tip='true'] input[type='time']");
+    private By end_Time= By.cssSelector("div[data-tip='true'] input[type='time']");
 
     private By clickCreateButton = By.xpath("//button[text()='Create']");
 
@@ -45,27 +43,22 @@ public class EventsPage {
     private  By successMessage = By.xpath("//div[@role='status']");
 
 
-    public EventsPage CreateNewEvent(String eventName, String eventSlug,String eventType,String timeZone)
+    public EventsPage createNewEvent(String eventName, String eventSlug, String eventType,String startDate,String endDate,String startTime,String endTime,String timeZone)
     {
      clicking(driver,newEvent_Button);
-     clicking(driver,StartFromScratch_Button);
-     sendData(driver,EventName_text,eventName);
-     sendData(driver,EventSlug_text,eventSlug+ getTimestamp());
+     clicking(driver,startFromScratch_Button);
+     sendData(driver,eventName_text,eventName);
+     sendData(driver,eventSlug_text,eventSlug + getTimestamp());
 
+     selectFromDropDown( driver,eventType_dropdownlist ,eventType);
 
-     selectFromDropDown( driver,EventType_dropdownlist ,eventType);
+     sendData(driver,start_Date,startDate);
+     sendData(driver,end_Date,endDate);
 
-     driver.findElement(StartDate).sendKeys("03232024");
-     driver.findElement(End_Date).sendKeys("04232024");
+     sendData(driver,start_Time,startTime);
+     sendData(driver,end_Time,endTime);
 
-
-     driver.findElement(Start_Time).sendKeys("1111PM");
-     driver.findElement(End_Time).sendKeys("1211PM");
-
-
-     selectFromDropDown( driver,Timezone_dropdownlist ,timeZone);
-
-
+     selectFromDropDown( driver,timezone_dropdownlist ,timeZone);
      return new EventsPage(driver);
     }
 
@@ -80,7 +73,6 @@ public class EventsPage {
 
     public String getSuccessMessage()
     {
-
      return   getText(driver, successMessage);
     }
 

@@ -3,8 +3,6 @@ package com.automationexercise.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.io.IOException;
-
 import static com.automationexercise.Utilities.Utility.*;
 
 public class PackagesPage {
@@ -17,18 +15,17 @@ public class PackagesPage {
     }
 
 
+    private  By NewPackageButton = By.xpath("//button[contains(.,'New Package')]");
+    private By saveButton = By.xpath("//button[contains(.,'Save')]");
 
-    By NewPackageButton = By.xpath("//button[contains(.,'New Package')]");
-    By saveButton = By.xpath("//button[contains(.,'Save')]");
+    private By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
 
-    By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
+    private By packageTitle_Text = By.cssSelector("#package_title");
 
-    By packageTitle_Text = By.cssSelector("#package_title");
-
-    By packagePriority_Text = By.cssSelector("#package_priority");
+    private  By packagePriority_Text = By.cssSelector("#package_priority");
 
 
-    By feature_name_text = By.cssSelector("#feature_name");
+    private  By feature_name_text = By.cssSelector("#feature_name");
 
 
     private  By packagedHeader = By.xpath("//h2[text()='Packages']");
@@ -39,7 +36,7 @@ public class PackagesPage {
 
 
 
-    public void CreateNewPackage(String title ,String featureName,String userType)
+    public void createNewPackage(String title , String featureName, String userType)
     {
 
         clicking(driver,NewPackageButton);

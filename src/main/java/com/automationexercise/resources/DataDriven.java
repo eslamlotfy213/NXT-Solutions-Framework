@@ -18,7 +18,6 @@ public class DataDriven {
     FileInputStream fis;
     public ArrayList<String> getData(String testcaseName,String headertestCases ,String sheetName, String pathFile)
     {
-        //fileInputStream argument
         ArrayList<String> a=new ArrayList<String>();
         try {
             fis = new FileInputStream(pathFile);
@@ -34,7 +33,6 @@ public class DataDriven {
             if(workbook.getSheetName(i).equalsIgnoreCase(sheetName))
             {
                 XSSFSheet sheet=workbook.getSheetAt(i);
-                //Identify Testcases coloum by scanning the entire 1st row
 
                 Iterator<Row>  rows= sheet.iterator();// sheet is collection of rows
                 Row firstrow= rows.next();

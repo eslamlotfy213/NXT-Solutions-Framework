@@ -212,7 +212,7 @@ public class Utility {
     {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(mainLocator)).click().build().perform();
-        actions.moveToElement(driver.findElement(subLocator)).click().build().perform();;
+        actions.moveToElement(driver.findElement(subLocator)).click().build().perform();
     }
 
 

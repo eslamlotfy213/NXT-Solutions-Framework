@@ -43,18 +43,16 @@ public class UserDetails {
 
 
 
-
-    public void fillUserDetails(String firstname,String lastname, String title, String organization,int phoneNumber, String userType)
+    public void fillUserDetails(String firstname,String lastname, String title, String organization, String userType)
     {
 
         sendData(driver, firstNameText, firstname+ getTimestamp());
         sendData(driver, lastNameText, lastname+ getTimestamp());
         sendData(driver, titleText, title);
         sendData(driver, organizationText, organization);
-        sendData(driver, PhoneNumberText, String.valueOf(phoneNumber));
-        sendData(driver, emailText, "example" + getSimpleTimestamp() + "" + "@gmail.com");
+        sendData(driver, PhoneNumberText, String.valueOf(generateRandomNumber(1111111111)));
+        sendData(driver, emailText, "example" + getSimpleTimestamp() + "@gmail.com");
         selectFromDropDown( driver,UserTypeDropDown ,userType);
-
         scrollToElement(driver, createButton);
         clicking(driver, createButton);
 

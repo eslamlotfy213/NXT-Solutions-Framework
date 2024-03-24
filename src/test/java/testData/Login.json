@@ -17,12 +17,16 @@
       "MainMenuItem_Registration": "Registration",
       "SecondSubMenuItem_Attendees": "Attendees",
       "groupName": "group one users",
-      "groupMessage": "Group created successfully",
+      "groupMessage": "Package created successfully.",
       "firstname":"New_user",
       "lastname": "last_user",
       "title": "mr_title",
       "organization": "com",
-      "userTypes": "assistant"
+      "userTypes": "assistant",
+      "start_Date":"03232024",
+      "end_Date": "04232024",
+      "start_Time": "1111PM",
+      "end_Time": "1211PM"
     }
 
 ]

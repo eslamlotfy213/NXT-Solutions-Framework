@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite parallel="classes" name="suite login validation" thread-count="2">
+<suite parallel="classes" name="Suite End To End Functionality Validation" thread-count="2">
 
   <listeners>
     <listener class-name="testData.Listeners"/>
   </listeners>
 
-  <test name="LoginFunctionality">
+  <test name="EndToEndFunctionality">
     <classes>
       <class name="com.automationexercise.tests.Feature001_EndT0EndScenario"/>
     </classes>
