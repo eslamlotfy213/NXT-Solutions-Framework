@@ -1,0 +1,25 @@
+name: Regression test workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Out Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '18'
+          cache: maven
+
+      - name: Run Test Cases Using Maven
+
+        run: mvn clean test

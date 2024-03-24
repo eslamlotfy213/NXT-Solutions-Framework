@@ -1,0 +1,28 @@
+[
+    {
+      "username":"nxttester",
+      "password":"nxt#qA@23",
+      "eventName": "demoEvent",
+      "eventSlug": "demoSlug",
+      "eventType": "Meeting",
+      "timeZone": "(UTC+3:00) Doha",
+      "eventMessage": "Event created successfully",
+      "dashboardHeader": "Dashboard",
+      "MainMenuItem_Planning": "Planning",
+      "SubMenuItem_Packages": "Packages",
+      "pageTitle": "New demo package",
+      "featureName": "ew demo flight",
+      "userType": "Static Text",
+      "packagesHeader": "Packages",
+      "MainMenuItem_Registration": "Registration",
+      "SecondSubMenuItem_Attendees": "Attendees",
+      "groupName": "group one users",
+      "groupMessage": "Group created successfully",
+      "firstname":"New_user",
+      "lastname": "last_user",
+      "title": "mr_title",
+      "organization": "com",
+      "userTypes": "assistant"
+    }
+
+]
