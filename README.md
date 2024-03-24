@@ -3,7 +3,7 @@
 # Project-Mega-Selenium-Framework.
 ✨ Master-Automation-Selenium-Framework Practice ==> Selenium Test Automation ✨
 
-![img.png](src/main/java/images/img.png)
+![img.png](src/main/java/images/img_1.png)
 
 Data driven testing framework  
 
