@@ -43,18 +43,20 @@ public class UserDetails {
 
 
 
-    public void fillUserDetails(String firstname,String lastname, String title, String organization, String userType)
+    public TripInfo fillUserDetails(String firstname,String lastname, String title, String organization, String userType)
     {
 
-        sendData(driver, firstNameText, firstname+ getTimestamp());
-        sendData(driver, lastNameText, lastname+ getTimestamp());
+        sendData(driver, firstNameText, firstname + generateRandomChars ("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 5));
+        sendData(driver, lastNameText, lastname+ generateRandomChars ("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 5));
         sendData(driver, titleText, title);
         sendData(driver, organizationText, organization);
         sendData(driver, PhoneNumberText, String.valueOf(generateRandomNumber(1111111111)));
-        sendData(driver, emailText, "example" + getSimpleTimestamp() + "@gmail.com");
+        sendData(driver, emailText, "example" + generateRandomChars ("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", 5)+ "@gmail.com");
         selectFromDropDown( driver,UserTypeDropDown ,userType);
         scrollToElement(driver, createButton);
         clicking(driver, createButton);
+
+        return new TripInfo(driver);
 
     }
 

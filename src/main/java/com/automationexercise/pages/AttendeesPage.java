@@ -34,6 +34,10 @@ public class AttendeesPage {
 
     private  By successMessage = By.xpath("//div[@role='status']");
 
+
+//    private  By successMessage = By.xpath("//div[@role='status']");
+//
+
     private By tableUsers(String groupName) {
 
         return By.xpath("//p[text()='" + groupName + "']");

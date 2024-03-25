@@ -53,8 +53,11 @@ public class Feature001_EndT0EndScenario extends  BaseTest{
 
 
         userDetails= attendeesPage.clickOnAddUser();
-        userDetails.fillUserDetails(input.get("firstname"),input.get("lastname"),input.get("title"),input.get("organization"),input.get("userTypes"));
+        TripInfo tripInfo =  userDetails.fillUserDetails(input.get("firstname"),input.get("lastname"),input.get("title"),input.get("organization"),input.get("userTypes"));
         Assert.assertEquals(userDetails.getSuccessMessage(),"User created successfully");
+        tripInfo.addUserTrip(input.get("packageName"));
+        Assert.assertEquals( tripInfo.getSuccessMessage(),input.get("tripMessage"));
+
 
     }
 

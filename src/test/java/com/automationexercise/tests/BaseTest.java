@@ -79,14 +79,14 @@ public class BaseTest {
 
 
 
-
-    @AfterMethod(alwaysRun = true)
-    public void tearDown(){
-
-        if (driver != null) {
-            driver.close();
-        }
-    }
+//
+//    @AfterMethod(alwaysRun = true)
+//    public void tearDown(){
+//
+//        if (driver != null) {
+//            driver.close();
+//        }
+//    }
 
 
     public String getScreenshot(String testCaseName, WebDriver driver){
